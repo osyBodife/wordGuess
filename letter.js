@@ -2,6 +2,10 @@ var inquirer = require('inquirer');
 
 //convert the word into an array
 var input = process.argv[2];
+//create a test array
+let wordToGuess=["a", "b", "c"];
+//let wordToGuess=[];
+let targetWordArray=[];
 
 function Letter(){
     //if there is not entry, input=false;
@@ -12,7 +16,7 @@ function Letter(){
             //test code so far
             console.log(input);
             //call the checkLetter function
-            checkLetter(input);
+            this.checkLetter(input);
 
         }else{
             console.log("You have not entered any letter.");
@@ -21,6 +25,22 @@ function Letter(){
 
     this.checkLetter=function(letter){ 
         this.letter=input; 
+        //if input letter or guessed letter in the wordToGuess array
+        //tell user , it is correct entry, and push to targetArray
+        //otherwise wrong entry       
+        if(wordToGuess.includes(this.letter)===true){
+            console.log("Correct!!");
+            //to add to it correct position the target arrary we need the index
+            // in wordToGuess array
+            var index = wordToGuess.indexOf(this.letter);
+            targetWordArray.splice(index,0,this.letter);
+            console.log(targetWordArray);
+             console.log(index);
+
+        }else{
+            //when user guessed wrongly
+            console.log("The letter is incorrect!!");
+        }
         
         
        

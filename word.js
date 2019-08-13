@@ -7,15 +7,17 @@ console.log (wordArray);
 
 
 let targetWordarray=[];
+let wordToGuess=[];
 function Word(){
 
 // eg strWord = World Trade Center
     this.strWordArray=function(){
         for(var i=0; i<wordArray.length; i++){
            
-            this.wordToGuess =wordArray[i].split('') ;           
-            //console.log(this.wordToGuess);
-            for(let j=0; j< this.wordToGuess.length; j++){
+            this.dataArray =wordArray[i].split('') ;           
+            console.log("Old array:" + this.dataArray);
+            for(let j=0; j< this.dataArray.length; j++){
+            wordToGuess.push(this.dataArray[j]);
             targetWordarray.push('_');         
 
 
@@ -26,13 +28,10 @@ function Word(){
         }
         
         console.log(targetWordarray);
+        console.log(wordToGuess);
     };
 
 }
 let guessWord= new Word();
 guessWord.strWordArray();
 //console.log(guessWord);
-
-var str = 'abcdefg';
-var ar = str.split(''); // empty string separator
-//console.log( ar ); // [ "a", "b", "c", "d", "e", "f", "g" ]
