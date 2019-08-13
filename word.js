@@ -13,12 +13,10 @@ function Word(){
     this.strWordArray=function(){
         for(var i=0; i<wordArray.length; i++){
            
-            this.wordToGuess =wordArray[i].split('') ;
-           
+            this.wordToGuess =wordArray[i].split('') ;           
             //console.log(this.wordToGuess);
             for(let j=0; j< this.wordToGuess.length; j++){
-            targetWordarray.push('_');
-           
+            targetWordarray.push('_');         
 
 
         }
