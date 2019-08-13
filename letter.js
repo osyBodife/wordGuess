@@ -3,8 +3,8 @@ var inquirer = require('inquirer');
 //convert the word into an array
 var input = process.argv[2];
 //create a test array
-let wordToGuess=["a", "b", "c"];
-//let wordToGuess=[];
+//let wordToGuess=["a", "b", "c"];
+let wordToGuess=[];
 let targetWordArray=[];
 
 function Letter(){
@@ -54,6 +54,8 @@ function Letter(){
 
 let guessWord= new Letter();
 guessWord.checkInput();
+
+module.exports = Letter;
 
 
 
