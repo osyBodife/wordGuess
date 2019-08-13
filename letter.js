@@ -3,17 +3,27 @@ var inquirer = require('inquirer');
 //convert the word into an array
 var input = process.argv[2];
 
-function Letter(input){
+function Letter(){
     //if there is not entry, input=false;
     this.input=false;
-    //create a function to check input
-    function checkInput(){
+    //create a function to check input 
+    this.checkInput=function(){    
         if(input){
-            console.log("You have not entered any letter.")
+            //test code so far
+            console.log(input);
+            //call the checkLetter function
+            checkLetter(input);
+
         }else{
-
-
+            console.log("You have not entered any letter.");
         }
+    }
+
+    this.checkLetter=function(letter){ 
+        this.letter=input; 
+        
+        
+       
     }
 
 
@@ -22,9 +32,8 @@ function Letter(input){
 
 
 
-
-
-
+let guessWord= new Letter();
+guessWord.checkInput();
 
 
 
